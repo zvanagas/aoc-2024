@@ -32,13 +32,7 @@ fn is_valid_sequence(seq: &[i32]) -> bool {
 }
 
 fn main() {
-    let file_content = match read_to_string("./inputs/2.txt") {
-        Ok(content) => content,
-        Err(e) => {
-            eprintln!("Error reading file: {}", e);
-            return;
-        }
-    };
+    let file_content = read_to_string("./inputs/2.txt").expect("Error reading file");
 
     let mut result = 0;
 

@@ -2,13 +2,7 @@ use regex::Regex;
 use std::fs::read_to_string;
 
 fn main() {
-    let file_content = match read_to_string("./inputs/3.txt") {
-        Ok(content) => content,
-        Err(e) => {
-            eprintln!("Error reading file: {}", e);
-            return;
-        }
-    };
+    let file_content = read_to_string("./inputs/3.txt").expect("Error reading file");
 
     let mut result = 0;
 

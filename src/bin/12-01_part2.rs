@@ -1,13 +1,7 @@
 use std::{collections::BTreeMap, fs::read_to_string};
 
 fn main() {
-    let file_content = match read_to_string("./inputs/1.txt") {
-        Ok(content) => content,
-        Err(e) => {
-            eprintln!("Error reading file: {}", e);
-            return;
-        }
-    };
+    let file_content = read_to_string("./inputs/1.txt").expect("Error reading file");
 
     let mut left_map = Vec::new();
     let mut right_map = BTreeMap::new();

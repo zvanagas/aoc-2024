@@ -1,13 +1,7 @@
 use std::fs::read_to_string;
 
 fn main() {
-    let file_content = match read_to_string("./inputs/4.txt") {
-        Ok(content) => content,
-        Err(e) => {
-            eprintln!("Error reading file: {}", e);
-            return;
-        }
-    };
+    let file_content = read_to_string("./inputs/4.txt").expect("Error reading file");
     let grid: Vec<Vec<char>> = file_content
         .lines()
         .map(|line| line.chars().collect())
@@ -40,7 +34,7 @@ fn main() {
         }
     }
 
-    print!("{}", result);
+    println!("{}", result);
 }
 
 fn check_direction(
